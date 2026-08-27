@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "./global.css";
+
+@layer base {
+  body {
+    background-color: var(--gb-canvas);
+    color: var(--gb-text-primary);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}

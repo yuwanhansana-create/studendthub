@@ -1,0 +1,6 @@
+{
+  "name": "StudentHub.lk",
+  "description": "Sri Lanka's dedicated student social and education platform with StudentHub AI chatbot, unique Student IDs, local education news, study collaboration, and safety controls. Connect. Learn. Grow.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

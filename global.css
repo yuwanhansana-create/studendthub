@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Geometric Balance Design System — Design Tokens & CSS Custom Properties
+   Strict mathematical 8pt/4pt rhythm, balanced contrast & crisp geometry
+   ========================================================================== */
+
+:root {
+  /* --------------------------------------------------------------------------
+     1. Color Palette: Geometric Balance
+     Neutrals: Slate cool-tinted scale (1-5% saturation)
+     Accent: Pure Indigo spectrum with calibrated contrast ratios (WCAG AA/AAA)
+     -------------------------------------------------------------------------- */
+  --gb-canvas: #F8FAFC;              /* slate-50 canvas backdrop */
+  --gb-surface: #FFFFFF;             /* pure white component container */
+  --gb-surface-elevated: #FFFFFF;    /* elevated popovers / dropdowns */
+  --gb-surface-subtle: #F1F5F9;      /* slate-100 muted panels / inputs */
+  --gb-surface-inset: #F8FAFC;       /* sunken / preview panels */
+
+  --gb-sidebar-bg: #0F172A;          /* slate-900 high-contrast structural sidebar */
+  --gb-sidebar-border: #334155;      /* slate-700 sidebar divider */
+  --gb-sidebar-text: #F8FAFC;        /* high-contrast sidebar text */
+  --gb-sidebar-text-muted: #94A3B8;  /* slate-400 sidebar label */
+
+  /* Text Hierarchy */
+  --gb-text-primary: #0F172A;        /* slate-900 high contrast */
+  --gb-text-secondary: #475569;      /* slate-600 balanced body */
+  --gb-text-muted: #94A3B8;          /* slate-400 subtle captions */
+  --gb-text-inverse: #FFFFFF;
+
+  /* Borders & Dividers */
+  --gb-border-subtle: #F1F5F9;       /* slate-100 inside dividers */
+  --gb-border-default: #E2E8F0;      /* slate-200 card edges */
+  --gb-border-strong: #CBD5E1;       /* slate-300 interactive focus/hover */
+  --gb-border-active: #6366F1;       /* indigo-500 focused ring */
+
+  /* Primary Accent Spectrum (Indigo) */
+  --gb-accent-50: #EEF2FF;
+  --gb-accent-100: #E0E7FF;
+  --gb-accent-200: #C7D2FE;
+  --gb-accent-500: #6366F1;
+  --gb-accent-600: #4F46E5;
+  --gb-accent-700: #4338CA;
+  --gb-accent-subtle: rgba(99, 102, 241, 0.08);
+  --gb-accent-border: rgba(99, 102, 241, 0.20);
+
+  /* Status Colors */
+  --gb-success-bg: #ECFDF5;
+  --gb-success-text: #059669;
+  --gb-warning-bg: #FFFBEB;
+  --gb-warning-text: #D97706;
+  --gb-danger-bg: #FEF2F2;
+  --gb-danger-text: #DC2626;
+
+  /* --------------------------------------------------------------------------
+     2. Mathematical Grid & Spacing System
+     Base Module: 4px
+     Grid Increment: 8px geometric baseline
+     Container Gaps: Strict 16px (1rem) / 24px (1.5rem) / 32px (2rem)
+     -------------------------------------------------------------------------- */
+  --gb-space-0: 0px;
+  --gb-space-0-5: 2px;
+  --gb-space-1: 4px;                 /* 0.25rem - Micro gap, tag padding vertical */
+  --gb-space-1-5: 6px;               /* 0.375rem - Compact button vertical */
+  --gb-space-2: 8px;                 /* 0.5rem  - Standard element margin / gap */
+  --gb-space-2-5: 10px;              /* 0.625rem */
+  --gb-space-3: 12px;                /* 0.75rem - Input padding / card sub-gaps */
+  --gb-space-4: 16px;                /* 1.0rem  - Container inner padding / standard card gap */
+  --gb-space-5: 20px;                /* 1.25rem - Medium section margin */
+  --gb-space-6: 24px;                /* 1.5rem  - Card outer padding / grid gutter */
+  --gb-space-8: 32px;                /* 2.0rem  - Page layout gap / section gap */
+  --gb-space-10: 40px;               /* 2.5rem  - Hero / major component spacing */
+  --gb-space-12: 48px;               /* 3.0rem  - Header height offset */
+  --gb-space-16: 64px;               /* 4.0rem  - Page bottom clearance */
+
+  /* Layout Widths */
+  --gb-sidebar-width: 256px;         /* 16rem */
+  --gb-right-sidebar-width: 288px;   /* 18rem */
+  --gb-content-max-width: 1280px;    /* 80rem */
+  --gb-header-height: 64px;          /* 4rem */
+
+  /* --------------------------------------------------------------------------
+     3. Geometric Corner Radii (Mathematical Nested Curvature)
+     Inner Radius = Outer Radius - Distance Between
+     -------------------------------------------------------------------------- */
+  --gb-radius-none: 0px;
+  --gb-radius-xs: 4px;
+  --gb-radius-sm: 6px;               /* Badges, micro buttons */
+  --gb-radius-md: 8px;               /* Standard buttons, input fields */
+  --gb-radius-lg: 12px;              /* Sub-cards, modal contents */
+  --gb-radius-xl: 16px;              /* Standard cards, panels */
+  --gb-radius-2xl: 20px;             /* Feature cards, hero banners */
+  --gb-radius-3xl: 24px;             /* Large containers, student ID cards */
+  --gb-radius-full: 9999px;          /* Pill tags, round avatars, search bars */
+
+  /* --------------------------------------------------------------------------
+     4. Geometric Elevation & Crisp Shadows
+     -------------------------------------------------------------------------- */
+  --gb-shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --gb-shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --gb-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --gb-shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.07), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+  --gb-shadow-accent: 0 8px 20px -4px rgba(79, 70, 229, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Dark Mode Palette Overrides
+   -------------------------------------------------------------------------- */
+.dark {
+  --gb-canvas: #090D16;
+  --gb-surface: #0F172A;
+  --gb-surface-elevated: #1E293B;
+  --gb-surface-subtle: #1E293B;
+  --gb-surface-inset: #090D16;
+
+  --gb-sidebar-bg: #0B1120;
+  --gb-sidebar-border: #1E293B;
+  --gb-sidebar-text: #F8FAFC;
+  --gb-sidebar-text-muted: #64748B;
+
+  --gb-text-primary: #F8FAFC;
+  --gb-text-secondary: #94A3B8;
+  --gb-text-muted: #64748B;
+  --gb-text-inverse: #0F172A;
+
+  --gb-border-subtle: #1E293B;
+  --gb-border-default: #334155;
+  --gb-border-strong: #475569;
+  --gb-border-active: #818CF8;
+
+  --gb-accent-subtle: rgba(99, 102, 241, 0.15);
+  --gb-accent-border: rgba(99, 102, 241, 0.30);
+
+  --gb-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.35);
+  --gb-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.45), 0 1px 2px -1px rgba(0, 0, 0, 0.35);
+  --gb-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.55), 0 2px 4px -2px rgba(0, 0, 0, 0.45);
+  --gb-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.65), 0 4px 6px -4px rgba(0, 0, 0, 0.55);
+  --gb-shadow-accent: 0 8px 24px -4px rgba(99, 102, 241, 0.35);
+}
